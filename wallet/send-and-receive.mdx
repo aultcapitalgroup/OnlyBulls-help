@@ -1,0 +1,88 @@
+---
+title: Send and receive crypto
+description: Send crypto to an address or another OnlyBulls user, save addresses, and receive crypto on the right network.
+---
+
+<Danger>
+**Always match the network**
+
+Crypto sent on the wrong network, or to an address on a different network, can be lost for good. Before you send, check that the sender and the recipient are using **the same network**. For example, USDC on Base must go to an address that's receiving USDC on Base.
+</Danger>
+
+## Send crypto
+
+<Steps>
+  <Step title="On the Wallet tab, tap Send">
+  </Step>
+  <Step title="Choose the token">
+    If you hold it on more than one network, pick the network too.
+  </Step>
+  <Step title="Enter an amount, or tap Use max">
+    You can switch between entering US dollars and the token amount.
+  </Step>
+  <Step title="Enter the recipient">
+    In **To**, enter one of these:
+    - A wallet address
+    - An OnlyBulls user's name, @username, or email
+    - Tap the QR icon to scan an address, or the bookmark icon to pick a saved address
+  </Step>
+  <Step title="Review the send">
+    On **Review send**, check **To**, **Network**, **Network fee**, and **Estimated debit**.
+    Open **Advanced details** to see the full addresses.
+  </Step>
+  <Step title="Tap Confirm send">
+  </Step>
+</Steps>
+
+You'll see **Successfully sent**, or **Send submitted** while the network confirms it. Tap **View activity** to follow it.
+
+### Network fees
+
+Every blockchain charges a small fee to process a transaction. It's paid in the network's own token: ETH on Ethereum, Base, Arbitrum, and Optimism; SOL on Solana; POL on Polygon; TRX on TRON; or BTC on Bitcoin. Keep a little of that token in your wallet so you can send. Where OnlyBulls covers the fee for you, the review screen shows **Paid by OnlyBulls**.
+
+Some networks have a few extra things to know:
+
+- **Bitcoin:** choose a **Speed**: Slow (~1 hour), Standard (~30 min), or Fast (~10 min). Faster costs more.
+- **Solana:** sending a token to someone who has never held it adds a one-time **Account creation** cost.
+- **TRON:** only TRX and USDT (TRC-20) can be sent from OnlyBulls right now.
+
+Staked tokens and balances in Perps can't be sent directly. Unstake or withdraw them first.
+
+### Saved addresses
+
+When you enter a valid address, tap **Save** to give it a label. Saved addresses are kept per network, and you can save up to 50.
+
+### Memos and destination tags
+
+OnlyBulls doesn't support memos or destination tags. If an exchange asks for a memo or tag when you send to it, don't send from OnlyBulls. Use a different route, or check the exchange's instructions first.
+
+### If something goes wrong
+
+| Message | What it means |
+| --- | --- |
+| **Invalid address** / **Expected EVM (0x...) address, but got Solana address** | The address doesn't match the network of the token you chose. |
+| **Insufficient balance** | You don't have enough of the token, including the network fee. |
+| **Not enough SOL** / **Insufficient TRX for the amount and live network fee.** | Add some of the network's token to pay the fee. |
+| **Transaction status unknown** | It may have gone through. Check [your activity](/wallet/activity) before you try again, so you don't send twice. |
+| **This token can't be sent yet, but it can still be swapped.** | Sending isn't supported for this token. You can [swap](/wallet/swap) it instead. |
+
+## Receive crypto
+
+<Steps>
+  <Step title="On the Wallet tab, tap Receive">
+  </Step>
+  <Step title="By default, the screen shows your address for USDC on Base">
+    To receive something else, tap **Receiving something else?** and choose the network.
+  </Step>
+  <Step title="Copy the address, tap Share, or let the sender scan your QR code">
+  </Step>
+</Steps>
+
+Incoming transactions usually take a few minutes to show up.
+
+### Which address to use
+
+- **Ethereum, Base, Arbitrum, Optimism, Polygon, BNB Smart Chain, Avalanche, Robinhood Chain, and Ault** all use **the same `0x…` address**. Make sure the sender chooses the right network.
+- **Solana**, **Bitcoin**, and **TRON** each have their own address.
+
+On iOS and Android you can also tap the QR icon at the top of the Wallet tab. Under **My QR** you can pick a network and show its address.

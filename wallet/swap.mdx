@@ -1,0 +1,66 @@
+---
+title: Swap tokens
+description: Trade one token for another, including across networks, and understand slippage, fees, and price impact.
+---
+
+Swapping trades one token in your wallet for another. OnlyBulls compares quotes from several swap and bridge providers and uses the best one. Swaps can also move tokens **between networks**, for example from ETH on Ethereum to SOL on Solana.
+
+<Steps>
+  <Step title="Tap Swap on the Wallet tab, or tap Trade → Swap">
+  </Step>
+  <Step title="In Pay with, choose the token you're giving up and enter an amount">
+    Tap **Max** to use your full balance.
+  </Step>
+  <Step title="In Receive, choose the token you want">
+    You can search by name, or paste a contract address.
+  </Step>
+  <Step title="Check the quote details below">
+    Quotes refresh automatically.
+  </Step>
+  <Step title="Review and confirm">
+    Tap **Review Swap**, check **You pay**, **You receive**, and **Minimum received**, then tap **Confirm Swap**.
+  </Step>
+</Steps>
+
+You'll see **Swap complete!** when the tokens arrive. Swaps between networks can take a few minutes. A progress banner on the Wallet tab tracks them.
+
+## Reading the quote
+
+| Row | Meaning |
+| --- | --- |
+| **Rate** | How much of the token you receive per token you pay. |
+| **Network fee** | The blockchain's fee (gas). It's paid in the network's native token, such as ETH, SOL, or POL. |
+| **Service fee** | The OnlyBulls fee for the swap, if any. |
+| **Bridge cost** | For swaps between networks, the cost of moving funds across. |
+| **Price impact** | How much your trade moves the price. It's higher for large trades or tokens that don't trade much. |
+| **Minimum received** | The least you'll get after slippage. If the price moves further than this, the swap won't go through. |
+
+Some network fees are covered for you. You'll see **Paid by OnlyBulls** where that applies.
+
+## Slippage
+
+Tap the gear icon on the Swap screen to open **Swap settings**. **Slippage tolerance** sets how far the price can move between your quote and the trade before the swap is cancelled.
+
+- The default is **2%**. You can pick 0.5%, 1%, 2%, or 3%, or set a custom value.
+- Above 3% you'll see a **High slippage** warning. A high setting makes failed swaps less likely, but you may get a worse price.
+
+## Approvals
+
+The first time you swap some tokens, the token needs your approval before it can be spent. The button then says **Review & Approve** or **Approve & Swap**. A few tokens need an existing approval reset first, so you may be asked to confirm up to three times.
+
+## High price impact
+
+- At **5% or more** price impact, or if the price can't be verified, you have to tick **I understand the risks of this swap** before you can continue.
+- At **30% or more**, the swap is blocked. Try a smaller amount.
+
+## Common swap errors
+
+| Message | What to do |
+| --- | --- |
+| **Insufficient balance** | Enter a smaller amount. |
+| **Add ETH for fees** (or SOL, POL, and so on) | You need some of the network's native token to pay the network fee. Tap the message to buy some or move some over. |
+| **Price moved too much - try increasing slippage tolerance** | The price changed before your swap went through. Try again, or raise slippage a little. |
+| **Insufficient liquidity** | There isn't enough trading for this pair or amount. Try a smaller amount or a different token. |
+| **Minimum for this route: X** | Swaps between networks have minimum amounts. Increase the amount. |
+| **Quote expired** | Get a fresh quote and review again. |
+| **Swapping AULT is coming soon** | AULT can't be swapped yet. |

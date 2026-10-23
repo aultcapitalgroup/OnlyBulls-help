@@ -1,0 +1,169 @@
+---
+title: Perps (perpetual futures)
+description: Trade perpetual futures with leverage, fund your Perps account, set take-profit and stop-loss, close positions, and withdraw.
+---
+
+<Warning>
+**High risk**
+
+Perps are leveraged products. You can lose your entire margin quickly, and positions can be **liquidated** if the price moves against you. Only trade with money you can afford to lose. Nothing in OnlyBulls is financial advice.
+</Warning>
+
+<Warning>
+**Not available in every country**
+
+Perps isn't available in the **United States**, **Cuba**, **Iran**, **North Korea**, or **Syria**. See [who can use Perps](#who-can-use-perps).
+</Warning>
+
+**Perps** let you bet on a crypto price going up (**long**) or down (**short**) with leverage, without owning the coin. Trades are executed on **Hyperliquid**, and your margin is **USDC**.
+
+## Who can use Perps
+
+- **Country:** Perps isn't available in the **United States, Cuba, Iran, North Korea, or Syria**. Your location is checked from your internet connection, and checked again while you use the app.
+- **Device:** Perps is in the **iOS and Android apps** only. It isn't on the web.
+- **Account:** Perps is rolling out gradually. If you don't see **Perps** when you tap **Trade**, it isn't on your account yet.
+
+### In a restricted country
+
+You'll see **Trading unavailable here** at the top of the Perps screen. In OnlyBulls this means:
+
+- You **can** view markets, your positions, and your account.
+- You **can** [withdraw](#withdraw) your available balance, and change **Perps settings**.
+- You **can't** deposit, open trades, close positions, cancel orders, or add or change take-profit and stop-loss. The same applies to [Protect](#protect-a-crypto-holding).
+
+Open positions **stay open** while you're in a restricted country, and they can still be liquidated. If you're traveling to one of these countries, close or protect your positions before you go.
+
+If you see **Region not confirmed** or **We couldn't check your region**, trading and deposits stay off until we can confirm where you are. Tap **Try again**. This can happen on some VPNs, proxies, and Tor.
+
+<Warning>
+Don't use a VPN to get around these restrictions. It breaks Hyperliquid's terms of use.
+</Warning>
+
+## Get set up
+
+### 1. Fund your Perps account
+
+You need **at least 11 USDC** to start.
+
+<Steps>
+  <Step title="Tap Trade → Perps, then Deposit">
+  </Step>
+  <Step title="Enter an amount and tap Deposit">
+  </Step>
+</Steps>
+
+Perps deposits use **USDC on Arbitrum**. If your USDC is on Base, the app may offer to move it to Arbitrum for you at no cost. USDC on other networks has to be [swapped](/wallet/swap) to USDC on Arbitrum first.
+
+Deposits usually show up in about a minute. If you see **Your USDC is safe on Arbitrum**, the move worked but the deposit didn't finish. Tap **Finish deposit**.
+
+<Warning>
+If you see **We could not confirm your last deposit**, check your wallet activity before you try again. Signing again could deposit twice.
+</Warning>
+
+### 2. Enable trading
+
+The first time on each device, tap **Enable trading** and approve two signatures:
+
+- One approves a **trading key** stored on this device. It can place trades for you, but it **can never withdraw** your money.
+- One approves the **OnlyBulls fee** per trade.
+
+After that, orders go through without a wallet prompt each time. If you use a new phone, you'll enable trading again there.
+
+## Place a trade
+
+<Steps>
+  <Step title="On the Perps screen, open the Markets tab and choose a coin">
+  </Step>
+  <Step title="Tap Buy to go long, or Sell to go short">
+  </Step>
+  <Step title="Choose an Order type">
+    - **Market**: fills now at the best available price.
+    - **Limit**: fills only at your price or better, and stays open until it fills or you cancel it.
+    - **Scale**: spreads your order across 2 to 5 prices.
+  </Step>
+  <Step title="Set your leverage">
+    It defaults to **2x**, and each market shows its maximum (**Up to Nx**).
+  </Step>
+  <Step title="Enter an amount, or tap 25%, 50%, or Max">
+    Check the estimated liquidation price (**Liq. ≈**).
+  </Step>
+  <Step title="Review and confirm">
+    Tap **Review order**, check the details, and tap **Confirm buy** or **Confirm sell**.
+  </Step>
+</Steps>
+
+The minimum order size is **\$10**. New positions use **isolated margin**, which means each position has its own margin.
+
+<Note>
+If you already have a position or an open order in a coin, new orders use that position's leverage. To change it, tap **Change leverage** first. Changing leverage on an open position also moves its liquidation price.
+</Note>
+
+### Flipping a position
+
+If you sell more than your long position (or buy more than your short), the order closes your position and opens one in the other direction. The review screen warns you, for example **This order closes your long and opens a … short.**, and any existing take-profit or stop-loss is cancelled.
+
+## Take profit and stop loss
+
+Open a position and find **Position protection**:
+
+- **Add take profit:** close part or all of the position when the price reaches a target. You can set up to **3 levels**, for example selling 25% at +5% and the rest at +10%.
+- **Add stop loss:** close the position if the price moves against you. It must sit before your liquidation price.
+- **Move stop to breakeven:** once the price has moved in your favour, move your stop to your entry price.
+
+Take-profit and stop-loss orders trigger as market orders, so in fast markets the fill price can differ from your trigger, and a full close isn't guaranteed.
+
+## Close a position
+
+Open the position and tap **Close position**, then confirm. This closes the **whole** position at the market price. To close only part of it, use a take-profit level or place an opposite order for a smaller amount.
+
+If you have open limit orders in the same coin, choose **Close position only** or **Cancel orders and close**. Orders left open can open a new position later.
+
+## Cancel orders
+
+Open the **Orders** tab, tap an order's menu, and choose **Cancel**. **Cancel all** cancels every order at once. Cancelling an order doesn't affect your positions.
+
+## Withdraw
+
+<Steps>
+  <Step title="On the Perps screen, tap Withdraw">
+  </Step>
+  <Step title="Enter an amount and confirm">
+  </Step>
+</Steps>
+
+There's a **1 USDC withdrawal fee**, so the minimum withdrawal is **1.01 USDC**. Withdrawals usually arrive in your wallet within 5 minutes.
+
+Money backing open positions can't all be withdrawn. Taking out margin moves your liquidation price closer. **Withdrawable** shows how much you can take out right now.
+
+## Fees and funding
+
+- **OnlyBulls fee:** 0.05% of each trade.
+- **Exchange fees:** Hyperliquid's own trading fees. Limit orders that rest on the book may earn a rebate instead.
+- **Funding:** while a position is open, you pay or receive funding every hour. The market page shows the current **Funding (1h)** rate.
+
+The review screen estimates your fees before every trade.
+
+## Protect a crypto holding
+
+If you hold at least \$25 of a coin that has a Perps market, you can **Protect** it. This opens a 1x short sized at part of your holding, so gains on the short offset losses if the price falls. Tap **Protect** on the token's page.
+
+- The short uses USDC from your Perps account. Your coins aren't sold or used as collateral.
+- If the price jumps, the short can be liquidated, and you lose its margin.
+- Funding and trading fees apply while it's open.
+- It stays open until you close it, even if you sell the coin.
+
+## Reviews before trading
+
+By default, every order, close, and take-profit or stop-loss change shows a review screen first. You can turn this off in **Perps settings** (the gear icon) with **Review before you trade**. Changing leverage, removing protection, and cancelling all orders always ask you to confirm.
+
+## Common Perps messages
+
+| Message | What to do |
+| --- | --- |
+| **Deposit at least 11 USDC** | Increase your deposit. |
+| **Not enough margin for this size.** | Choose a smaller amount or add funds. |
+| **Minimum order is \$10 for this market** | Increase the order size. |
+| **The price moved. Tap Buy again.** | Prices moved during review. Try again. |
+| **This order would change the leverage on your existing exposure.** | Change leverage first, then place the order. |
+| **This wallet has reached the limit of devices that can trade in Perps.** | Remove an old OnlyBulls API wallet on Hyperliquid, then try again. |
+| **Could not confirm this order — it may still be open.** | Check the **Orders** and **Positions** tabs before you place another order. |

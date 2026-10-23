@@ -1,0 +1,76 @@
+---
+title: Wallet security
+description: Unlocking your wallet, multi-factor authentication, exporting your private key, and staying safe from scams.
+---
+
+Your OnlyBulls wallet is self-custodial: you control it, and OnlyBulls can't move your funds. That also means **OnlyBulls can't recover your wallet if you lose access to your login.** These tools help you keep it safe.
+
+## Wallet unlock (iOS and Android)
+
+If your phone has a passcode, Face ID, or fingerprint set up, OnlyBulls asks you to **Unlock your wallet** before you use it. The wallet locks again after the app has been in the background for about a minute.
+
+If you see **Authentication failed. Please try again.**, tap **Unlock wallet** again. If your phone has no screen lock set up, this step is skipped. We recommend turning on a screen lock.
+
+## Multi-factor authentication
+
+Multi-factor authentication (MFA) adds a second check before sensitive wallet actions.
+
+<Steps>
+  <Step title="Open More → Wallet settings">
+    On the web, click the gear icon on the Wallet page.
+  </Step>
+  <Step title="Under Security, find Multi-Factor Authentication">
+  </Step>
+  <Step title="Tap Set up MFA to use an authenticator app, or Set up passkey">
+  </Step>
+</Steps>
+
+<Warning>
+**MFA can lock your wallet**
+
+If you lose every MFA method you've set up, you'll lose access to your wallet. Set up more than one method, for example an authenticator app **and** a passkey, and keep them safe.
+</Warning>
+
+## Export your private key
+
+Your private key gives full control of your wallet. Export it to use the same wallet in another wallet app, such as MetaMask or Phantom. You can export the keys for your Ethereum (EVM) and Solana wallets.
+
+You export keys on the web, at onlybulls.com:
+
+<Steps>
+  <Step title="Open Wallet settings on the web">
+    Sign in at [onlybulls.com](https://onlybulls.com/wallet/settings) with the same account you use in the app, then click the gear icon on the **Wallet** page. In the iOS or Android app, **More → Wallet settings → Private key export** opens this page in your browser.
+  </Step>
+  <Step title="Choose a wallet">
+    Under **Export Private Keys**, click **Ethereum** or **Solana**. A secure window opens.
+  </Step>
+  <Step title="Copy your key">
+    Click the large green **Copy key** button at the bottom of the window. Don't use the small **Copy** next to your address. That copies only your public address, not your key.
+  </Step>
+  <Step title="Store it somewhere safe">
+    Use a password manager, an encrypted file, or a secure offline backup.
+  </Step>
+</Steps>
+
+<Note>
+The secure window is provided by **Privy**, which powers OnlyBulls wallets. Your key is shown only to you. Neither OnlyBulls nor Privy can see it.
+</Note>
+
+Bitcoin and TRON keys can't be exported. To move those funds somewhere else, [send them](/wallet/send-and-receive) to another wallet.
+
+<Danger>
+**Never share your private key**
+
+Anyone with your private key can take everything in your wallet. OnlyBulls will never ask for it. Don't paste it into any website, chat, or form.
+</Danger>
+
+## There's no seed phrase
+
+OnlyBulls wallets don't use a 12- or 24-word recovery phrase. Your wallet is protected by your OnlyBulls login, plus MFA if you've set it up. Anyone asking for your "OnlyBulls seed phrase" is trying to scam you.
+
+## Staying safe
+
+- Only approve [connection and signature requests](/wallet/connect-to-apps#approve-or-reject-requests) you started yourself.
+- Ignore tokens you didn't buy. Scammers send them as bait. See [Hide tokens](/wallet/your-wallet#hide-unwanted-tokens).
+- Double-check the network and address before every [send](/wallet/send-and-receive).
+- OnlyBulls support will never ask for your password, sign-in links, verification codes, or private key.

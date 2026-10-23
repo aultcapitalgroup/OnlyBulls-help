@@ -1,0 +1,91 @@
+---
+title: Staking
+description: Stake AULT with a validator, or stake ETH and SOL through liquid staking, and how unstaking and rewards work.
+---
+
+<Note>
+**Rolling out**
+
+Staking is being rolled out gradually, and the options you see depend on your account. If **Stake** isn't in the More menu, it isn't available to you yet.
+</Note>
+
+Open **More → Stake** ("Stake crypto to earn rewards") and tap **Stake**. Under **Choose how to stake**, you'll see each option with its current reward rate:
+
+| Option | How it works |
+| --- | --- |
+| **AULT · Ault** | Delegate AULT to a validator on the Ault network. Rewards build up and you claim them. |
+| **ETH · Base / Ethereum (Lido)** | Swap ETH for **wstETH**, a token representing staked ETH. |
+| **SOL · Solana (Marinade)** | Swap SOL for **mSOL**, a token representing staked SOL. |
+
+## Stake AULT
+
+<Steps>
+  <Step title="Choose AULT · Ault and tap Continue">
+  </Step>
+  <Step title="Enter an amount, or tap Stake all">
+    A small amount is kept back for network fees.
+  </Step>
+  <Step title="Choose a validator">
+    Tap **Pick for me** to use our suggestion, or **Let me pick** to browse validators by **commission** and **voting power**.
+  </Step>
+  <Step title="Review the details, including Time to withdraw, and tap Stake now">
+  </Step>
+</Steps>
+
+<Warning>
+**Staked AULT is locked**
+
+Staked AULT can't be sent or swapped. When you unstake, there's a waiting period, shown in the app as **about N days**, before it becomes spendable again. It stops earning rewards as soon as you unstake.
+</Warning>
+
+### Claim AULT rewards
+
+Rewards don't add themselves to your balance. To collect them:
+
+<Steps>
+  <Step title="Open More → Stake">
+  </Step>
+  <Step title="Under Claimable rewards, tap Claim all, or tap Claim on a single validator">
+  </Step>
+  <Step title="Tap Claim now">
+  </Step>
+</Steps>
+
+Claiming moves rewards into spendable AULT and doesn't touch your staked balance. If you've staked with several validators, you'll sign once for each validator.
+
+### Unstake AULT
+
+<Steps>
+  <Step title="Open More → Stake and find the validator under Breakdown">
+  </Step>
+  <Step title="Tap Unstake, enter an amount, and review">
+  </Step>
+  <Step title="Tap Unstake now">
+  </Step>
+</Steps>
+
+The amount moves to **Unstaking** with a countdown, and is spendable when the waiting period ends.
+
+Each validator allows only a limited number of unstake requests at once. If **Unstake** is greyed out, wait for an earlier request to that validator to finish.
+
+### Network fees on Ault
+
+Staking, unstaking, and claiming all need a little **spendable AULT** to pay the network fee. If you see **You need a little spendable AULT to cover the network fee**, add some AULT first.
+
+## Liquid staking (ETH and SOL)
+
+Liquid staking swaps your ETH or SOL for a token that earns staking rewards while it sits in your wallet:
+
+- **ETH → wstETH** (Lido), on Base or Ethereum
+- **SOL → mSOL** (Marinade), on Solana
+
+There's nothing to claim, because rewards are built into the token's value. To unstake, swap the token back to ETH or SOL. The amount you get depends on the quote and fees at the time.
+
+## Common staking messages
+
+| Message | What it means |
+| --- | --- |
+| **This validator can no longer be staked to.** | Pick another validator, or use the suggested one. |
+| **The validator list is out of date.** | Tap **Refresh validators**. Nothing was sent or charged. |
+| **You cancelled before signing. Your crypto never left your wallet.** | Nothing happened. Try again when you're ready. |
+| **New stakes are currently unavailable.** | You can still view and manage your existing positions. |

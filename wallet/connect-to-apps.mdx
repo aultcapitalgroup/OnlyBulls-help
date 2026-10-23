@@ -1,0 +1,73 @@
+---
+title: Connect your wallet to apps
+description: Use your OnlyBulls wallet with other crypto apps through WalletConnect or the in-app browser, approve requests safely, and disconnect.
+---
+
+You can use your OnlyBulls wallet with other crypto apps, often called dApps, in two ways:
+
+- **WalletConnect:** scan a QR code shown on a website on your computer.
+- **Discover:** open dApps directly inside OnlyBulls.
+
+Connecting lets the app see your wallet address and balances. **It can't move funds or sign anything without your approval.**
+
+## Connect with a QR code (WalletConnect)
+
+<Steps>
+  <Step title="On the website, choose WalletConnect as your wallet">
+    A QR code appears.
+  </Step>
+  <Step title="In OnlyBulls, open More → Scan">
+    You can also use the QR icon on the Wallet tab and choose **Scan**.
+  </Step>
+  <Step title="Point your camera at the QR code">
+    If you have a link that starts with `wc:` instead, tap **Paste connection link**.
+  </Step>
+  <Step title="Check the app's name and the networks it's asking for, then tap Connect">
+  </Step>
+</Steps>
+
+You'll see **Connected**. Head back to the website on your computer to continue.
+
+WalletConnect works with Ethereum, Arbitrum, Base, Optimism, Polygon, BNB Smart Chain, Avalanche, Robinhood Chain, Ault, and Solana.
+
+## Use the Discover browser
+
+Open **More → Discover** to browse dApps. You can also type a dApp's web address into the bar at the top.
+
+- **iOS and Android:** dApps open in OnlyBulls' built-in browser, already connected to your wallet.
+- **Web:** dApps open in a new browser tab.
+
+## Approve or reject requests
+
+When a connected app wants you to do something, OnlyBulls shows a request. Read it carefully before you tap anything.
+
+| Request | What it does |
+| --- | --- |
+| **Sign in to…** | Proves you own the wallet. Doesn't move any funds. |
+| **Sign message** / **Approve structured data** | Signs data for the app. Some signatures can authorize trades or transfers, so only sign if you understand what it's for. |
+| **Approve … spending** | Lets the app spend a token from your wallet. |
+| **Send Transaction** | Sends funds or interacts with a contract. Check the amount and the recipient. |
+
+Tap **Reject** if anything looks wrong.
+
+<Danger>
+**Warnings mean stop**
+
+If you see **Dapp identity mismatch**, **Network mismatch**, **Account mismatch**, or **Signed data could not be fully verified**, the request may not be what it claims to be. Don't approve a request you didn't start yourself.
+</Danger>
+
+## See and disconnect connected apps
+
+Open **More → Connections** to see **Connected apps**. They're grouped into **WalletConnect** and **In-app Browser**.
+
+To disconnect one, tap it and choose **Disconnect**. The app loses access to your wallet, and you can reconnect whenever you like.
+
+## Connection errors
+
+| Message | What to do |
+| --- | --- |
+| **This link has already been used** | WalletConnect codes work only once. Refresh the website to get a new QR code. |
+| **This request expired** | Start the connection again from the website. |
+| **Network not supported** | The app wants a network OnlyBulls doesn't support. |
+| **Create a wallet first** | Finish [setting up your wallet](/wallet/your-wallet#if-your-wallet-is-unavailable). |
+| **Insufficient funds for gas** | Add some of the network's token (for example ETH) to pay the network fee. |
