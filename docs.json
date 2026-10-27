@@ -4,9 +4,9 @@
   "name": "OnlyBulls Help",
   "description": "Guides and answers for the OnlyBulls app: your wallet, trading, AI chat, briefs, and more.",
   "colors": {
-    "primary": "#2F9E44",
+    "primary": "#2E7D32",
     "light": "#C2EA62",
-    "dark": "#2E7D32"
+    "dark": "#39B550"
   },
   "background": {
     "color": {
@@ -108,7 +108,7 @@
     "links": [
       {
         "label": "Contact support",
-        "href": "mailto:support@onlybulls.com"
+        "href": "/help/contact-support"
       }
     ],
     "primary": {
