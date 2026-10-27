@@ -14,21 +14,7 @@
 	box-shadow: 0 0 0 1px rgba(57, 181, 80, 0.6);
 }
 
-.chat-assistant-floating-input div:has(> div > .chat-assistant-input) {
-	border: 1.5px solid rgba(57, 181, 80, 0.75);
-	box-shadow: 0 0 0 4px rgba(57, 181, 80, 0.12);
-}
-
-.chat-assistant-floating-input .chat-assistant-input::placeholder {
-	color: #2e7d32;
-}
-
 .dark .sidebar-group-header,
-.dark #assistant-entry,
-.dark .chat-assistant-floating-input .chat-assistant-input::placeholder {
+.dark #assistant-entry {
 	color: #c2ea62;
-}
-
-.dark .chat-assistant-floating-input div:has(> div > .chat-assistant-input) {
-	background-color: #141a12;
 }
