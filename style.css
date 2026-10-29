@@ -20,13 +20,13 @@
 }
 
 .ob-chat-toggle {
-	position: fixed; right: 20px; bottom: 20px; z-index: 50;
+	position: fixed; right: 92px; bottom: 28px; z-index: 1000;
 	padding: 10px 18px; border-radius: 999px; border: 0; cursor: pointer;
 	background: #2e7d32; color: #fff; font-weight: 600;
 	box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
 }
 .ob-chat-panel {
-	position: fixed; right: 20px; bottom: 72px; z-index: 50;
+	position: fixed; right: 20px; bottom: 84px; z-index: 1000;
 	width: min(380px, calc(100vw - 24px)); height: min(520px, calc(100vh - 100px));
 	display: flex; flex-direction: column; overflow: hidden;
 	background: #fff; color: #0b0c0a; border: 1px solid rgba(57, 181, 80, 0.6); border-radius: 12px;
