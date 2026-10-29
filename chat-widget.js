@@ -3,6 +3,7 @@
   var TURNSTILE_SITE_KEY = "0x4AAAAAAFp9X745rus4_ZaT";
   var history = [];
   var turnstileToken = "";
+  var turnstileFailed = false;
 
   function el(tag, attrs, text) {
     var node = document.createElement(tag);
@@ -24,8 +25,8 @@
     var re = /\[([^\]]+)\]\(([^)\s]+)\)/g, last = 0, m;
     while ((m = re.exec(text))) {
       renderInline(container, text.slice(last, m.index));
-      var href = m[2].charAt(0) === "/" ? "/help" + m[2] : m[2];
-      if (/^(\/|https:\/\/onlybulls\.com|mailto:support@onlybulls\.com)/.test(href)) {
+      var href = m[2];
+      if (/^(\/(?!\/)|https:\/\/onlybulls\.com(\/|$)|mailto:support@onlybulls\.com$)/.test(href)) {
         container.appendChild(el("a", { href: href }, m[1]));
       } else {
         container.appendChild(document.createTextNode(m[1]));
@@ -55,7 +56,7 @@
     var send = el("button", { type: "submit" }, "Send");
     var tsBox = el("div", { class: "ob-chat-turnstile" });
     var foot = el("div", { class: "ob-chat-foot" });
-    foot.appendChild(document.createTextNode("AI answers can be wrong. "));
+    foot.appendChild(document.createTextNode("AI answers can be wrong and aren't financial advice. "));
     var mail = el("a", { class: "ob-chat-mail", href: "mailto:support@onlybulls.com?subject=" + encodeURIComponent("Help request") }, "Email support");
     foot.appendChild(mail);
     form.appendChild(input); form.appendChild(send);
@@ -64,26 +65,39 @@
 
     addMessage(log, "bot", "Hi! Ask me anything about using OnlyBulls.");
 
+    var turnstileLoaded = false;
+    function failTurnstile() {
+      turnstileFailed = true;
+      turnstileToken = "";
+      addMessage(log, "bot", "The human check didn't load, so I can't answer right now. Use the Email support button below and we'll help.");
+    }
+    function loadTurnstile() {
+      if (turnstileLoaded) return;
+      turnstileLoaded = true;
+      var s = el("script", { src: "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit", async: "", defer: "" });
+      s.onload = function () {
+        window.turnstile.render(tsBox, {
+          sitekey: TURNSTILE_SITE_KEY,
+          size: "flexible",
+          callback: function (t) { turnstileToken = t; },
+          "expired-callback": function () { turnstileToken = ""; },
+          "error-callback": function () { failTurnstile(); return true; },
+        });
+      };
+      s.onerror = failTurnstile;
+      document.head.appendChild(s);
+    }
+
     button.addEventListener("click", function () {
       panel.hidden = !panel.hidden;
-      if (!panel.hidden) input.focus();
+      if (!panel.hidden) { loadTurnstile(); input.focus(); }
     });
-
-    var s = el("script", { src: "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit", async: "", defer: "" });
-    s.onload = function () {
-      window.turnstile.render(tsBox, {
-        sitekey: TURNSTILE_SITE_KEY,
-        size: "flexible",
-        callback: function (t) { turnstileToken = t; },
-        "expired-callback": function () { turnstileToken = ""; },
-      });
-    };
-    document.head.appendChild(s);
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var q = input.value.trim();
       if (!q) return;
+      if (turnstileFailed) { failTurnstile(); return; }
       if (!turnstileToken) { addMessage(log, "bot", "Verifying you're human. Try again in a moment."); return; }
       input.value = ""; send.disabled = true;
       mail.href = "mailto:support@onlybulls.com?subject=" + encodeURIComponent("Help request") +
