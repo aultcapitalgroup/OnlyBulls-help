@@ -45,6 +45,8 @@
 .ob-chat-form button { padding: 8px 12px; border: 0; border-radius: 8px; background: #2e7d32; color: #fff; cursor: pointer; }
 .ob-chat-form button:disabled { opacity: 0.5; }
 .ob-chat-foot { padding: 0 14px 10px; font-size: 0.75rem; opacity: 0.75; }
+.ob-chat-mail { display: inline-block; margin-left: 4px; padding: 4px 10px; border-radius: 6px; border: 1.5px solid #2e7d32; font-weight: 600; text-decoration: none; }
+.dark .ob-chat-mail { border-color: #39b550; }
 .dark .ob-chat-panel { background: #141a12; color: #eef3ea; }
 .dark .ob-chat-head { color: #c2ea62; }
 .dark .ob-chat-bot { background: #1e281b; }

@@ -56,7 +56,8 @@
     var tsBox = el("div", { class: "ob-chat-turnstile" });
     var foot = el("div", { class: "ob-chat-foot" });
     foot.appendChild(document.createTextNode("AI answers can be wrong. "));
-    foot.appendChild(el("a", { href: "/help/contact-support" }, "Contact support"));
+    var mail = el("a", { class: "ob-chat-mail", href: "mailto:support@onlybulls.com?subject=" + encodeURIComponent("Help request") }, "Email support");
+    foot.appendChild(mail);
     form.appendChild(input); form.appendChild(send);
     [head, log, tsBox, form, foot].forEach(function (n) { panel.appendChild(n); });
     document.body.appendChild(panel); document.body.appendChild(button);
@@ -85,6 +86,8 @@
       if (!q) return;
       if (!turnstileToken) { addMessage(log, "bot", "Verifying you're human. Try again in a moment."); return; }
       input.value = ""; send.disabled = true;
+      mail.href = "mailto:support@onlybulls.com?subject=" + encodeURIComponent("Help request") +
+        "&body=" + encodeURIComponent("My question:\n" + q + "\n\nMy OnlyBulls account email:\n");
       addMessage(log, "user", q);
       var pending = addMessage(log, "bot", "Thinking...");
       fetch(API_URL, {
