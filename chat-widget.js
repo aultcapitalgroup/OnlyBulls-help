@@ -158,6 +158,11 @@
       var native = document.querySelector(".chat-assistant-floating-input, #assistant-entry");
       toggle.classList.toggle("ob-chat-bar", !native);
       panel.classList.toggle("ob-chat-panel-bar", !native);
+      renderLabel();
+    }
+    function renderLabel() {
+      var open = !panel.hidden;
+      toggleLabel.textContent = open ? "Close" : toggle.classList.contains("ob-chat-bar") ? "Ask a question..." : "Ask AI";
     }
     placeToggle();
     var tries = 0;
@@ -190,7 +195,7 @@
     function setOpen(open) {
       panel.hidden = !open;
       toggle.classList.toggle("ob-chat-open", open);
-      toggleLabel.textContent = open ? "Close" : "Ask AI";
+      renderLabel();
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
       if (open) { loadTurnstile(); input.focus(); } else { toggle.focus(); }
     }
