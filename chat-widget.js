@@ -78,6 +78,8 @@
     var head = el("div", { class: "ob-chat-head" });
     head.appendChild(el("span", {}, "OnlyBulls help"));
     head.appendChild(el("span", { class: "ob-chat-badge" }, "AI"));
+    var close = el("button", { type: "button", class: "ob-chat-close", "aria-label": "Close chat" }, "\u00D7");
+    head.appendChild(close);
     var log = el("div", { class: "ob-chat-log", "aria-live": "polite" });
     var form = el("form", { class: "ob-chat-form" });
     var input = el("input", { type: "text", maxlength: "500", placeholder: "Ask a question...", "aria-label": "Your question" });
@@ -108,6 +110,7 @@
         window.turnstile.render(tsBox, {
           sitekey: TURNSTILE_SITE_KEY,
           size: "flexible",
+          appearance: "interaction-only",
           callback: function (t) { turnstileToken = t; },
           "expired-callback": function () { turnstileToken = ""; },
           "error-callback": function () { failTurnstile(); return true; },
@@ -117,10 +120,15 @@
       document.head.appendChild(s);
     }
 
-    button.addEventListener("click", function () {
-      panel.hidden = !panel.hidden;
-      if (!panel.hidden) { loadTurnstile(); input.focus(); }
-    });
+    function setOpen(open) {
+      panel.hidden = !open;
+      button.textContent = open ? "Close" : "Ask AI";
+      button.setAttribute("aria-expanded", open ? "true" : "false");
+      if (open) { loadTurnstile(); input.focus(); } else { button.focus(); }
+    }
+    button.addEventListener("click", function () { setOpen(panel.hidden); });
+    close.addEventListener("click", function () { setOpen(false); });
+    panel.addEventListener("keydown", function (e) { if (e.key === "Escape") setOpen(false); });
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
