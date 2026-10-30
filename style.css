@@ -74,8 +74,9 @@
 .ob-chat-rate button.ob-chat-picked { opacity: 1; color: #2e7d32; }
 .ob-chat-rate button:disabled:not(.ob-chat-picked) { opacity: 0.2; cursor: default; }
 
-.ob-chat-turnstile:empty, .ob-chat-turnstile[hidden] { display: none; }
-.ob-chat-turnstile { padding: 0 16px; }
+/* Hidden by default (kept rendered so the check can still run); shown only while the visitor must interact */
+.ob-chat-turnstile { height: 0; overflow: hidden; padding: 0 16px; }
+.ob-chat-turnstile.ob-chat-ts-show { height: auto; overflow: visible; padding-bottom: 8px; }
 .ob-chat-form { display: flex; align-items: center; gap: 8px; margin: 8px 16px 0; padding: 6px 6px 6px 14px; border-radius: 999px; border: 1px solid rgba(128, 128, 128, 0.35); }
 .ob-chat-form:focus-within { border-color: rgba(57, 181, 80, 0.8); }
 .ob-chat-form input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: inherit; font: inherit; font-size: 0.9rem; padding: 6px 0; }
