@@ -34,6 +34,7 @@
 	padding: 14px 14px 14px 18px; border-radius: 16px; font-weight: 400; opacity: 0.95;
 }
 .ob-chat-toggle.ob-chat-bar span { opacity: 0.6; }
+.ob-chat-toggle.ob-chat-open svg { display: none; }
 .ob-chat-toggle.ob-chat-open.ob-chat-bar { display: none; }
 
 .ob-chat-panel {
