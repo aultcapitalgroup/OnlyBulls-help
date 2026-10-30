@@ -51,3 +51,8 @@
 .dark .ob-chat-head { color: #c2ea62; }
 .dark .ob-chat-bot { background: #1e281b; }
 .dark .ob-chat-toggle, .dark .ob-chat-user, .dark .ob-chat-form button { background: #39b550; color: #0b0c0a; }
+.ob-chat-rate { align-self: flex-start; display: flex; gap: 4px; margin-top: -4px; }
+.ob-chat-rate button { background: none; border: 1px solid transparent; border-radius: 6px; padding: 0 6px; cursor: pointer; opacity: 0.6; font-size: 0.9rem; }
+.ob-chat-rate button:hover:not(:disabled) { opacity: 1; }
+.ob-chat-rate button.ob-chat-picked { opacity: 1; border-color: #2e7d32; }
+.dark .ob-chat-rate button.ob-chat-picked { border-color: #39b550; }
