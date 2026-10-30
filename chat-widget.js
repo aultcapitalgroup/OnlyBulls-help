@@ -155,7 +155,10 @@
 
     // Where Mintlify's own assistant is still on, sit beside its button; otherwise show a bottom bar.
     function placeToggle() {
-      var native = document.querySelector(".chat-assistant-floating-input, #assistant-entry");
+      var native = [].slice.call(document.querySelectorAll(".chat-assistant-floating-input, #assistant-entry")).some(function (n) {
+        var cs = getComputedStyle(n);
+        return cs.visibility !== "hidden" && cs.display !== "none";
+      });
       toggle.classList.toggle("ob-chat-bar", !native);
       panel.classList.toggle("ob-chat-panel-bar", !native);
       renderLabel();
