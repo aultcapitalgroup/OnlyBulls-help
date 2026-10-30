@@ -183,7 +183,9 @@
           sitekey: TURNSTILE_SITE_KEY,
           size: "flexible",
           appearance: "interaction-only",
-          callback: function (t) { turnstileToken = t; },
+          callback: function (t) { turnstileToken = t; tsBox.classList.remove("ob-chat-ts-show"); },
+          "before-interactive-callback": function () { tsBox.classList.add("ob-chat-ts-show"); },
+          "after-interactive-callback": function () { tsBox.classList.remove("ob-chat-ts-show"); },
           "expired-callback": function () { turnstileToken = ""; },
           "error-callback": function () { failTurnstile(); return true; },
         });
