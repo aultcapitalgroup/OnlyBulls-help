@@ -1,5 +1,7 @@
 (function () {
   var API_URL = "https://onlybulls-help-chat.ops-22b.workers.dev/";
+  var FEEDBACK_URL = API_URL + "feedback";
+  var lastChatId = "";
   var TURNSTILE_SITE_KEY = "0x4AAAAAAFp9X745rus4_ZaT";
   var history = [];
   var turnstileToken = "";
@@ -36,6 +38,32 @@
     renderInline(container, text.slice(last));
   }
 
+  function sendFeedback(id, type) {
+    if (!id) return;
+    fetch(FEEDBACK_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id: id, type: type }),
+      keepalive: true,
+    }).catch(function () {});
+  }
+
+  function addRating(log, id) {
+    var row = el("div", { class: "ob-chat-rate" });
+    var up = el("button", { type: "button", "aria-label": "Helpful" }, "\u{1F44D}");
+    var down = el("button", { type: "button", "aria-label": "Not helpful" }, "\u{1F44E}");
+    function pick(type, chosen) {
+      sendFeedback(id, type);
+      chosen.classList.add("ob-chat-picked");
+      up.disabled = true; down.disabled = true;
+    }
+    up.addEventListener("click", function () { pick("up", up); });
+    down.addEventListener("click", function () { pick("down", down); });
+    row.appendChild(up); row.appendChild(down);
+    log.appendChild(row);
+    log.scrollTop = log.scrollHeight;
+  }
+
   function addMessage(log, role, text) {
     var msg = el("div", { class: "ob-chat-msg ob-chat-" + role });
     if (role === "bot") renderAnswer(msg, text); else msg.textContent = text;
@@ -56,9 +84,10 @@
     var send = el("button", { type: "submit" }, "Send");
     var tsBox = el("div", { class: "ob-chat-turnstile" });
     var foot = el("div", { class: "ob-chat-foot" });
-    foot.appendChild(document.createTextNode("AI answers can be wrong and aren't financial advice. "));
+    foot.appendChild(document.createTextNode("AI answers can be wrong and aren't financial advice. Questions are saved to improve help. "));
     var mail = el("a", { class: "ob-chat-mail", href: "mailto:support@onlybulls.com?subject=" + encodeURIComponent("Help request") }, "Email support");
     foot.appendChild(mail);
+    mail.addEventListener("click", function () { sendFeedback(lastChatId, "email"); });
     form.appendChild(input); form.appendChild(send);
     [head, log, tsBox, form, foot].forEach(function (n) { panel.appendChild(n); });
     document.body.appendChild(panel); document.body.appendChild(button);
@@ -114,6 +143,8 @@
           pending.textContent = "";
           if (r.ok) {
             renderAnswer(pending, r.d.answer);
+            lastChatId = r.d.id || "";
+            if (lastChatId) addRating(log, lastChatId);
             history.push({ role: "user", content: q }, { role: "assistant", content: r.d.answer });
           } else {
             pending.textContent = r.d.error || "Something went wrong. Contact support.";
