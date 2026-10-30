@@ -136,5 +136,10 @@
       "facebook": "https://www.facebook.com/onlybullsapp/",
       "linkedin": "https://linkedin.com/company/onlybullsapp"
     }
+  },
+  "integrations": {
+    "posthog": {
+      "apiKey": "phc_fLi7YXviXbE35BbYbs7ucS3ESveNf66FHruKH7zBxr0"
+    }
   }
 }
