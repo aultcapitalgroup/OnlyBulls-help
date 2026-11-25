@@ -60,6 +60,12 @@
         ]
       },
       {
+        "group": "Card Packs",
+        "pages": [
+          "card-packs"
+        ]
+      },
+      {
         "group": "Markets & research",
         "pages": [
           "markets/explore-and-search",
