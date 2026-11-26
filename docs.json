@@ -62,7 +62,8 @@
       {
         "group": "Card Packs",
         "pages": [
-          "card-packs"
+          "card-packs",
+          "card-packs-v2"
         ]
       },
       {
